@@ -5,7 +5,9 @@ This project demonstrates how to use argoCD and k8s
 # for this project i choose minkune a single node cluster but for minkube to work there must be docker deskstop running on ur system
 
 # create a prpject folder 
- argocd-deployment-kubenrnetes
+ `mkdir argocd-deployment-kubenrnetes`
+
+ `cd argocd-deployment-kubenrnetes`
  
 # start your minkube by running the command below
 `minikube start`
@@ -42,15 +44,25 @@ kubectl get pods -n argocd
 ![](./k8s/img/get-pods-argo.png)
 
 # Get service in argocd namespace
-kubectl get svc -n argocd
+`kubectl get svc -n argocd`
 
 
 # Map port
-kubectl port-forward svc/argocd-server -n argocd 8080:443
+`kubectl port-forward svc/argocd-server -n argocd 8080:443`
+
+![](./k8s/img/port-forward.png)
 
 # Run below on new terminal
-kubectl -n argocd get secret argocd-initial-admin-secret -o yaml
+`kubectl -n argocd get secret argocd-initial-admin-secret -o yaml`
 
-kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+![](./k8s/img/secret.png)
+
+
+`kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d`
+
+![](./k8s/img/secret2.png)
+
 # Run the cmd below to create a new file for a new pod & observe argoCD detect and sync changes
-kubectl run web1  --image=nginx --dry-run=client -o yaml > pod.yaml
+`kubectl run web1  --image=nginx --dry-run=client -o yaml > pod.yaml`
+
+![](./k8s/img/podls.png)
