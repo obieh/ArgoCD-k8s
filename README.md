@@ -24,16 +24,28 @@ This project demonstrates how to use argoCD and k8s
 
 # Create Namespace
 `kubectl create ns argocd`
+![](./k8s/img/namespace.png)
+
+
 
 # Install ArgoCD on k8s cluster
 
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+`kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml`
+
+![](./k8s/img/argo1.png)
+
+![](./k8s/img/argo2.png)
 
 # Get pods in argocd namespace
 kubectl get pods -n argocd
+
+![](./k8s/img/get-pods-argo.png)
+
 # Get service in argocd namespace
 kubectl get svc -n argocd
-# Map 
+
+
+# Map port
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 # Run below on new terminal
