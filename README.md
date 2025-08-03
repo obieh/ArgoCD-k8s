@@ -1,8 +1,8 @@
-ArgoCD with kubernetes
-This project demonstrates how to use argoCD and k8s
+# ArgoCD with kubernetes
+## This project demonstrates how to use argoCD and k8s
 
-# make sure you have a kubenrnte tool ready to work with 
-# for this project i choose minkune a single node cluster but for minkube to work there must be docker deskstop running on ur system
+## Make sure you have a kubenrnte tool ready to work with 
+## For this project i choose minkune a single node cluster but for minkube to work there must be docker deskstop running on ur system
 
 # create a prpject folder 
  `mkdir argocd-deployment-kubenrnetes`
